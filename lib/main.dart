@@ -36,6 +36,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          FirebaseFirestore.instance.collection('user').add({"id": "MyId"});
+          print("Done");
+        },
+      ),
+    );
   }
 }
